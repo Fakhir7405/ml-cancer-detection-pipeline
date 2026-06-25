@@ -154,8 +154,3 @@ Accuracy alone is misleading for medical data. A model that always predicts "ben
 
 UCI Breast Cancer Wisconsin Dataset — included via `sklearn.datasets.load_breast_cancer()`. 569 samples, 30 features, 2 classes (357 benign, 212 malignant).
 
-## Author
-
-**Fakhir Shahzad**  
-BS Computer Science — FAST-NUCES Lahore (2024–2028)  
-[l240512@lhr.nu.edu.pk](mailto:l240512@lhr.nu.edu.pk)
