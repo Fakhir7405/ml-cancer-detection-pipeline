@@ -104,6 +104,12 @@ rf_pred = rf_model.predict(X_test_scaled)
 rf_accuracy = accuracy_score(y_test, rf_pred)
 print(f"Random Forest Accuracy: {rf_accuracy:.4f} ({rf_accuracy*100:.1f}%)")
 
+from sklearn.model_selection import cross_val_score
+
+scores = cross_val_score(rf_model, X_train_scaled, y_train, cv=5)
+print(f"CV Scores: {scores}")
+print(f"Mean: {scores.mean():.3f} (+/- {scores.std():.3f})")
+
 # Pick best model
 if rf_accuracy > lr_accuracy:
     best_model = rf_model
@@ -153,3 +159,16 @@ with open('features.pkl', 'wb') as f:
 print(f"✅ {best_name} saved as best_model.pkl")
 print(f"✅ Scaler saved as scaler.pkl")
 print(f"✅ Feature names saved as features.pkl")
+
+
+
+
+
+# IMPORTANT ML CONCEPTS:
+"""
+1) Overfitting vs Underfitting (bias-variance tradeoff)
+2) Hyperparameter tuning (GridSearchCV, RandomizedSearchCV)
+3) Cross-validation (KFold, StratifiedKFold)
+4) Feature importance 
+
+"""
